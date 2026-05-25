@@ -27,7 +27,7 @@ function ProjectCards({title, description, image, tech, demo, code}) {
             className='flex-1 text-center py-3 rounded-full bg-gradient-to-r from-pink-500 to-purple-600'
           >
             Live Demo
-          </a>  {/* ✅ Added closing </a> tag */}
+          </a>  
           
           {code && (
             <a

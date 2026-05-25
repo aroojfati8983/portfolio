@@ -83,7 +83,7 @@ export const projects = [
   title: "E-Commerce Platform",
   description: "A product catalog web app with multiple pages, product listing, and product details view. 🛒",
   image: projectImg1,
-  tech: ["React", "Node.js", "MongoDB", "Stripe"],
+  tech: ["React",  "CSS", "JavaScript","Vite"],
   icons: [FaReact, FaNodeJs, FaDatabase, FaStripe],
   demo: "https://router-8o3q.vercel.app/",
   code: "https://github.com/aroojfati8983/router",
