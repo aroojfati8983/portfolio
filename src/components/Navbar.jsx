@@ -1,82 +1,102 @@
 import React, { useState } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
+import { motion } from 'framer-motion'
 
 function Navbar() {
-    const [showMenu, setShowMenu] = useState(false); 
-    
-    return (
-        <nav className='fixed w-full z-50 bg-dark-100/90 backdrop-blur-sm py-4 px-8 shadow-lg'>
-            <div className="container mx-auto flex justify-between items-center">
-                <div>
-                    <a href="#" className='text-3xl font-bold text-white'>
-                        Arooj
-                        <span className='text-purple-500'>Fatima</span>
-                        <div className='w-4 h-4 bg-purple-500 rounded-full inline-block ml-2'>
-                            {/* Decorative dot */}
-                        </div>
-                    </a>
-                </div>
-                
-                <div className="hidden md:flex space-x-10">
-                    <a href='#home' className='relative text-white/80 transition duration-300 hover:text-purple-500 group'>
-                        <span>Home</span>
-                        <span className='absolute left-0 -bottom-1 w-0 h-0.5 bg-purple-500 transition-all duration-300 group-hover:w-full'></span>
-                    </a>
-                    <a href='#about' className='relative text-white/80 transition duration-300 hover:text-purple-500 group'>
-                        <span>About</span>
-                        <span className='absolute left-0 -bottom-1 w-0 h-0.5 bg-purple-500 transition-all duration-300 group-hover:w-full'></span>
-                    </a>
-                    <a href='#skills' className='relative text-white/80 transition duration-300 hover:text-purple-500 group'>
-                        <span>Skills</span>
-                        <span className='absolute left-0 -bottom-1 w-0 h-0.5 bg-purple-500 transition-all duration-300 group-hover:w-full'></span>
-                    </a>
-                    <a href='#projects' className='relative text-white/80 transition duration-300 hover:text-purple-500 group'>
-                        <span>Projects</span>
-                        <span className='absolute left-0 -bottom-1 w-0 h-0.5 bg-purple-500 transition-all duration-300 group-hover:w-full'></span>
-                    </a>
-                    <a href='#experience' className='relative text-white/80 transition duration-300 hover:text-purple-500 group'>
-                        <span>Experience</span>
-                        <span className='absolute left-0 -bottom-1 w-0 h-0.5 bg-purple-500 transition-all duration-300 group-hover:w-full'></span>
-                    </a>
-                    <a href='#contact' className='relative text-white/80 transition duration-300 hover:text-purple-500 group'>
-                        <span>Contact</span>
-                        <span className='absolute left-0 -bottom-1 w-0 h-0.5 bg-purple-500 transition-all duration-300 group-hover:w-full'></span>
-                    </a>
-                </div>
-            
-                <div className='md:hidden'>
-                    {showMenu ?
-                        <FaTimes onClick={()=>setShowMenu(!showMenu)} className='text-2xl cursor-pointer text-white'/> :
-                        <FaBars onClick={()=>setShowMenu(!showMenu)} className='text-2xl cursor-pointer text-white'/>        
-                    }
-                </div>
+  const [showMenu, setShowMenu] = useState(false)
+
+  return (
+    <>
+      <motion.nav
+        initial={{ y: -80 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6 }}
+        className='fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-[#070b14]/90 via-[#0a0f1a]/90 to-[#070b14]/90 backdrop-blur-2xl border-b border-white/10 shadow-2xl'
+      >
+
+        <div className='px-6 py-4'>
+          <div className='flex items-center justify-between max-w-7xl mx-auto'>
+
+            {/* LOGO */}
+            <a
+              href='#home'
+              className='text-2xl md:text-3xl font-bold text-white tracking-wide'
+            >
+              Arooj
+              <span className='bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent'>
+                Fatima
+              </span>
+            </a>
+
+            {/* DESKTOP MENU */}
+            <div className='hidden md:flex items-center gap-8'>
+
+              {['home', 'about', 'skills', 'projects', 'contact'].map((item, index) => (
+                <a
+                  key={index}
+                  href={`#${item}`}
+                  className='relative text-gray-300 hover:text-white transition duration-300 text-sm uppercase tracking-wider group'
+                >
+                  {item}
+
+                  <span className='absolute left-0 -bottom-2 h-[2px] w-0 bg-gradient-to-r from-cyan-400 to-purple-500 transition-all duration-300 group-hover:w-full'></span>
+                </a>
+              ))}
+
+              {/* Resume Button */}
+              <a
+                href='#'
+                className='px-5 py-2 rounded-full bg-gradient-to-r from-cyan-500 to-purple-500 text-white text-sm font-semibold hover:scale-105 transition duration-300 shadow-lg shadow-cyan-500/20'
+              >
+                Resume
+              </a>
             </div>
-            
-            {/* Mobile menu */}
-            {showMenu && (
-                <div className='md:hidden mt-4 bg-dark-300 rounded-lg p-4 flex flex-col space-y-4 text-center'>
-                    <a onClick={()=>setShowMenu(!showMenu)} href='#home' className='text-white/80 hover:text-purple-500 transition py-2'>
-                        Home
-                    </a>
-                    <a onClick={()=>setShowMenu(!showMenu)} href='#about' className='text-white/80 hover:text-purple-500 transition py-2'>
-                        About
-                    </a>
-                    <a onClick={()=>setShowMenu(!showMenu)} href='#skills' className='text-white/80 hover:text-purple-500 transition py-2'>
-                        Skills
-                    </a>
-                    <a onClick={()=>setShowMenu(!showMenu)} href='#projects' className='text-white/80 hover:text-purple-500 transition py-2'>
-                        Projects
-                    </a>
-                    <a onClick={()=>setShowMenu(!showMenu)} href='#experience' className='text-white/80 hover:text-purple-500 transition py-2'>
-                        Experience
-                    </a>
-                    <a onClick={()=>setShowMenu(!showMenu)} href='#contact' className='text-white/80 hover:text-purple-500 transition py-2'>
-                        Contact
-                    </a>
-                </div>
-            )}
-        </nav>
-    )
+
+            {/* MOBILE ICON */}
+            <div className='md:hidden text-white text-2xl cursor-pointer'>
+              {
+                showMenu
+                  ? <FaTimes onClick={() => setShowMenu(false)} />
+                  : <FaBars onClick={() => setShowMenu(true)} />
+              }
+            </div>
+
+          </div>
+        </div>
+      </motion.nav>
+
+      {/* MOBILE MENU */}
+      {
+        showMenu && (
+          <motion.div
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            className='fixed top-16 left-0 right-0 bg-gradient-to-b from-[#070b14]/95 to-[#0a0f1a]/95 backdrop-blur-2xl border-b border-white/10 py-6 flex flex-col items-center gap-5 z-40 shadow-2xl'
+          >
+
+            {['home', 'about', 'skills', 'projects', 'contact'].map((item, index) => (
+              <a
+                key={index}
+                href={`#${item}`}
+                onClick={() => setShowMenu(false)}
+                className='text-gray-300 hover:text-cyan-400 transition duration-300 uppercase tracking-wider py-2'
+              >
+                {item}
+              </a>
+            ))}
+
+            <a
+              href='#'
+              className='px-6 py-2 rounded-full bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold'
+            >
+              Resume
+            </a>
+
+          </motion.div>
+        )
+      }
+    </>
+  )
 }
 
 export default Navbar

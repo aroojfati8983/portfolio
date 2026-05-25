@@ -1,39 +1,47 @@
 import React from 'react'
 
-function ProjectCards({ title, description, image, tech, demo, code }) {  
+function ProjectCards({title, description, image, tech, demo, code}) {
   return (
-    <div className='bg-dark-300 rounded-2xl overflow-hidden hover:-translate-y-2 transition duration-300 cursor-pointer'>
-      <img src={image} alt={title} className='w-full h-60 object-cover' />
+    <div className='glass rounded-[30px] overflow-hidden hover:-translate-y-4 duration-300'>
+      <img src={image} alt={title} className='h-64 w-full object-cover'/>
+      
       <div className='p-6'>
-        <h3 className='text-xl font-bold text-white mb-2'>{title}</h3>
-        <p className='text-gray-400 mb-4'>{description}</p>
-        <div className='flex flex-wrap gap-2'>
-          {tech && tech.map((item, index) => (
-            <span key={index} className='px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm'>
-              {item}
-            </span>
-          ))}
+        <h3 className='text-2xl font-bold mb-3'>{title}</h3>
+        <p className='text-gray-400 mb-5'>{description}</p>
+        
+        <div className='flex flex-wrap gap-3 mb-8'>
+          {
+            tech.map((item, index) => (
+              <span key={index} className='px-3 py-1 rounded-full bg-purple-500/10 text-purple-300 text-sm'>
+                {item}
+              </span>
+            ))
+          }
         </div>
-        <div className='flex gap-4 justify-center mt-12'>
-          <a 
-            href={demo || "#"} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className='flex-1 text-center px-6 py-3 bg-purple-500 rounded-lg text-white font-medium hover:bg-purple-700 transition duration-300'
+        
+        <div className='flex gap-4'>
+          <a
+            href={demo}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='flex-1 text-center py-3 rounded-full bg-gradient-to-r from-pink-500 to-purple-600'
           >
-            View Demo 
-          </a>
-          <a 
-            href={code || "#"} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className='flex-1 text-center px-4 py-2 border border-purple-500 rounded-lg font-medium hover:bg-purple-500/20 transition duration-300'
-          >
-            Code
-          </a>
+            Live Demo
+          </a>  {/* ✅ Added closing </a> tag */}
+          
+          {code && (
+            <a
+              href={code}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='flex-1 text-center py-3 rounded-full border border-purple-500/50 hover:bg-purple-500/10'
+            >
+              Source Code
+            </a>
+          )}
         </div>
-      </div>
-    </div>
+      </div> 
+    </div>  
   )
 }
 

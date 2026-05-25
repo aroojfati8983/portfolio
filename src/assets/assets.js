@@ -42,7 +42,7 @@ export const skills = [
   {
     title: 'Frontend Development',
     icon: FaReact,
-    description: 'Building responsive websites with React and modern CSS frameworks.',
+    description: 'Building responsive React sites with modern CSS frameworks.',
     tags: ['React', 'Tailwind CSS', 'Bootstrap', 'Material UI']
   },
   {
@@ -55,7 +55,7 @@ export const skills = [
     title: 'Database',
     icon: FaDatabase,
     description: 'Managing data with modern databases.',
-    tags: ['MongoDB', 'MySQL', 'Firebase']
+    tags: ['MongoDB', 'MySQL']
   },
   {
     title: 'API Testing & Development',
@@ -85,8 +85,9 @@ export const projects = [
   image: projectImg1,
   tech: ["React", "Node.js", "MongoDB", "Stripe"],
   icons: [FaReact, FaNodeJs, FaDatabase, FaStripe],
-  demo: "https://router-fpk4.vercel.app/",
+  demo: "https://router-8o3q.vercel.app/",
   code: "https://github.com/aroojfati8983/router",
+ 
 },
   {
   title: "User Authentication System",
@@ -103,7 +104,7 @@ export const projects = [
   image: projectImg3,
   tech: ["React", "API Integration", "CSS3", "Axios"],
   icons: [FaCloud, FaReact, FaCss3Alt],
-  demo: "https://weather-6ofn.vercel.app/",
+  demo: "https://weather-psi-azure-30.vercel.app/",
   code: "https://github.com/aroojfati8983/weather",
 },
   {
@@ -112,7 +113,7 @@ export const projects = [
   "image": projectImg4,
   "tech": ["React", "Tailwind CSS", "Framer Motion", "Vite"],
  "icons": [FaReact, FaCss3Alt], 
-  "demo": "https://your-portfolio.vercel.app",
+  "demo": "#",
   "code": "https://github.com/aroojfati8983/portfolio"
 },
   {
@@ -162,3 +163,5 @@ export const workData = [
     color: "blue"
   }
 ];
+export const techStack = [
+ "React", "Node.js", "Tailwind CSS", "MongoDB", "Express.js", "Git", "Vite"];

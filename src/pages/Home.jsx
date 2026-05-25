@@ -8,14 +8,14 @@ import Contact from '../components/Contact'
 
 function Home() {
   return (
-    <div>
-      <Hero/>
-      <About/>
-      <Skills/>
-      <Project/>
-      <Work/>
-      <Contact/>
-    </div>
+   <div>
+  <Hero key="hero"/>
+  <About key="about"/>
+  <Skills key="skills"/>
+  <Project key="project"/>
+  <Work key="work"/>
+  <Contact key="contact"/>
+</div>
   )
 }
 

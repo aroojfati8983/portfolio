@@ -3,7 +3,7 @@
 @import "tailwindcss";
 
 * {
-  font-family: Saira, sans-serif;
+  font-family: 'Saira', sans-serif;
 }
 
 @theme {
@@ -14,6 +14,23 @@
   --color-purple: #8B5CF6;
   --color-pink: #EC4899;
   --color-blue: #3B82F6;
+}
+
+/* Custom Components */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #7dd3fc, #c084fc, #f9a8d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glow {
+  box-shadow: 0 0 40px rgba(168, 85, 247, 0.4);
 }
 
 .typewriter {
@@ -40,4 +57,29 @@
   50% {
     border-color: #8B5CF6;
   }
+}
+
+/* Custom Scrollbar (Optional) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #070b14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #8B5CF6, #EC4899);
+  border-radius: 10px;
+}
+
+/* Smooth Transitions */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #070b14;
+  color: white;
+  overflow-x: hidden;
 }
